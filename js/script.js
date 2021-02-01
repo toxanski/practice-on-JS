@@ -10,7 +10,7 @@ inputRub.addEventListener('input', () => {
     request.send();
     request.addEventListener('load', () => {
         if(request.status === 200) {
-            console.log(request);
+            console.log(request.response);
             const data = JSON.parse(request.response);
             inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2);
         } else {
